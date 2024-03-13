@@ -1,0 +1,86 @@
+$colorWhite: #fff;
+$colorBlack: #000;
+$colorGrey: #666;
+$colorLightGrey: #999;
+$colorDarkGrey: #333;
+$colorGreen: #4ab020;
+$colorLightGreen: #99c71f;
+$colorDarkGreen: #648300;
+$colorRed: #b01e1e;
+$colorLightRed: #ce7f7f;
+$colorDarkRed: #881616;
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	color: $colorBlack;
+	font-size: 14px;
+	font-family: Roboto, sans-serif;
+	line-height: 1.25;
+}
+
+* {
+	outline: none;
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 1em;
+	line-height: 1;
+	margin: 0;
+}
+
+img {
+	vertical-align: top;
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	transition: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+ul,
+ol {
+	list-style-type: none;
+	list-style-position: inside;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+button {
+	outline: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	position: relative;
+	vertical-align: middle;
+}
+
+.wrapper {
+	position: relative;
+	min-width: 320px;
+	min-height: 100%;
+	overflow: hidden;
+}
