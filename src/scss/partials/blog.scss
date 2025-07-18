@@ -1,0 +1,114 @@
+.blog {
+	background-color: #FFFFFF;
+
+	.container {
+		padding-bottom: 120px;
+
+		.blog__title {
+			color: var(--Black-Primary, #000);
+			display: flex;
+			justify-content: center;
+			padding-bottom: 40px;
+
+			font-family: 'Poppins', sans-serif;
+			font-size: 48px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 64px; /* 133.333% */
+			letter-spacing: 0.96px;
+		}
+
+		.blog__posts {
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+
+			.blog__posts-item {
+				display: grid;
+				gap: 20px;
+
+				.blog__posts__image-wrapper {
+					width: 482px;
+					height: 277px;
+
+					.blog__posts-image {
+						display: block;
+						height: 100%;
+						width: 100%;
+						object-fit: cover
+					}
+				}
+
+				.blog__posts-item__info {
+					display: grid;
+					gap: 10px;
+
+					.blog__posts-item__title {
+
+						a{
+							color: var(--Black-Primary, #000);
+
+							/* H3-Desktop */
+							font-family: 'Poppins', sans-serif;
+							font-size: 24px;
+							font-style: normal;
+							font-weight: 600;
+							line-height: 26px; /* 108.333% */
+							letter-spacing: 0.48px;
+							text-decoration: none;
+						}
+
+					}
+
+					.blog__posts-item__date {
+						color: var(--Grey, #999);
+						font-family: 'Poppins', sans-serif;
+						font-size: 14px;
+						font-style: normal;
+						font-weight: 400;
+						line-height: 22px; /* 157.143% */
+					}
+
+					.blog__posts-item__description {
+						color: var(--Dark-Grey-Secondary, #6E7172);
+
+						/* Paragraph-3 */
+						font-family: 'Poppins', sans-serif;
+						font-size: 14px;
+						font-style: normal;
+						font-weight: 400;
+						line-height: 22px; /* 157.143% */
+						max-width: 482px;
+					}
+
+					.blog__posts-item__read-more {
+						a {
+							color: var(--Black-Primary, #000);
+
+							font-family: 'Poppins', sans-serif;
+							font-size: 18px;
+							font-style: normal;
+							font-weight: 400;
+							line-height: 26px; /* 144.444% */
+							letter-spacing: 1.08px;
+							text-transform: uppercase;
+
+							text-decoration: underline;
+							text-decoration-color: transparent;
+							text-underline-offset: 4px;
+							transition: text-decoration-color 0.5s ease;
+							opacity: 1;
+
+							&:hover {
+								text-decoration-color: var(--Black-Primary, #000); // або #000
+							}
+
+						}
+
+
+					}
+				}
+			}
+		}
+	}
+}

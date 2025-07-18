@@ -1,0 +1,58 @@
+
+
+	.items_card{
+		background-color: #FFFFFF;
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+		.card{
+			display: grid;
+			gap: 10px;
+			.card_image {
+				width: 354px;
+				height: 441px;
+				overflow: hidden;
+				a, img {
+					display: block;
+					width: 100%;
+					height: 100%;
+					object-fit: cover; // Обрізає зображення, зберігаючи пропорції
+					transition: opacity 0.5s ease;
+
+					&:hover {
+						opacity: 0.8;
+					}
+				}
+			}
+			.card_title{
+				color: #3A3836;
+				text-align: center;
+				font-family: 'Poppins', sans-serif;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 300;
+				line-height: 24px; /* 150% */
+				letter-spacing: 0.32px;
+				text-decoration: none;
+				transition: opacity 0.5s ease;
+
+				&:hover {
+					opacity: 0.7;
+				}
+
+			}
+			.tax{
+				color: #3A3836;
+				text-align: center;
+				font-family: 'Poppins', sans-serif;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 24px; /* 150% */
+				letter-spacing: 0.32px;
+			}
+		}
+
+	}
+
+

@@ -1,0 +1,56 @@
+.jewelry_collection{
+	background-color: #FFFFFF;
+	.container{
+		display: grid;
+		padding: 120px 0 120px;
+		.jewelry_collection__title{
+			display: flex;
+			justify-content: center;
+			color: var(--Black-Primary, #000);
+
+			font-family: 'Poppins', sans-serif;
+			font-size: 60px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 70px; /* 116.667% */
+			letter-spacing: 1.2px;
+			padding-bottom: 120px;
+		}
+		.jewelry_collection__gallery{
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+
+			.jewelry_collection__gallery-left{
+				.jewelry_collection__gallery-image-wrapper {
+					width: 738px;
+					height: 919px;
+					img{
+						display: block;
+						height: 100%;
+						width: 100%;
+						object-fit: cover
+					}
+				}
+			}
+			.jewelry_collection__gallery-right{
+				display: grid;
+				grid-template-columns: repeat(2, auto); // 2 елементи в рядок
+				grid-template-rows: repeat(2, auto);
+				gap: 37px;
+				.jewelry_collection__gallery-item{
+					width: 354px;
+					height: 441px;
+					img{
+						display: block;
+						height: 100%;
+						width: 100%;
+						object-fit: cover
+					}
+				}
+
+			}
+		}
+
+	}
+}
