@@ -54,21 +54,24 @@
 		gap: 106px;
 
 		.header_logo {
-			svg path {
-				fill: #ffffff;
-				stroke: #ffffff;
-				transition: fill .5s ease-in-out, stroke .5s ease-in-out;
+			.logo__img {
+				display: none;
+				transition: opacity 0.3s ease;
+			}
 
-
+			.logo__img--white {
+				display: block;
 			}
 
 			&.scrolled {
-				svg path {
-					fill: #000000;
-					stroke: #000000;
+				.logo__img--white {
+					display: none;
+				}
+
+				.logo__img--black {
+					display: block;
 				}
 			}
-
 		}
 
 		.header_nav {

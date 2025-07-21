@@ -1,0 +1,210 @@
+.gift{
+	background-color: #FFFFFF;
+	.container{
+		padding: 120px 0 120px 0;
+		display: flex;
+		justify-content: center;
+		.gift_items__left{
+			display: grid;
+			.gift_items__image__mod{
+				width: 753px;
+				height: 493px;
+				background-image: url('../../img/gift1_fon.jpg');
+				background-size: cover;
+				background-position: center;
+
+				img{
+					height: 100%;
+					width: 100%;
+				}
+				.image__mod{
+					display: block;
+					height: 100%;
+					width: 100%;
+					object-fit: contain;
+				}
+			}
+			.gift_items__image {
+				width: 753px;
+				height: 493px;
+
+				img {
+					display: block;
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+			.gift_items__info{
+				display: grid;
+				gap: 20px;
+				padding: 129px 80px 130px 80px;
+				background: #F9F9F9;
+				.gift_items__title{
+					color: var(--Black-Primary, #000);
+
+					font-family: 'Poppins', sans-serif;
+					font-size: 48px;
+					font-style: normal;
+					font-weight: 600;
+					line-height: 64px; /* 133.333% */
+					letter-spacing: 0.96px;
+				}
+				.gift_items__description{
+					color: #6E7172;
+
+
+					font-family: 'Poppins', sans-serif;
+					font-size: 14px;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 22px; /* 157.143% */
+				}
+				.gift_items__button {
+					display: flex;
+					justify-content: start;
+
+					a{
+						text-decoration: none;
+						.shop-now {
+							display: flex;
+							justify-content: center;
+							font-family: 'Poppins', sans-serif;
+							font-size: 14px;
+							background: #000000;
+							color: #ffffff;
+							padding: 20px 91px 22px 79px;
+							cursor: pointer;
+							border: 1px solid transparent;
+							transition: opacity 0.5s ease-in-out;
+
+							&:hover {
+								opacity: 0.7;
+								border: 1px solid #000000;
+
+							}
+						}
+
+					}
+
+
+
+				}
+			}
+		}
+		.gift_items__right{
+			display: grid;
+			.gift_items__image {
+				width: 753px;
+				height: 493px;
+
+
+
+				img {
+					display: block;
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+			.gift_items__info{
+				display: grid;
+				gap: 20px;
+				padding: 129px 80px 130px 80px;
+				background: #F9F9F9;
+				.gift_items__title{
+					color: var(--Black-Primary, #000);
+
+					font-family: 'Poppins', sans-serif;
+					font-size: 48px;
+					font-style: normal;
+					font-weight: 600;
+					line-height: 64px; /* 133.333% */
+					letter-spacing: 0.96px;
+				}
+				.gift_items__description{
+					color: #6E7172;
+
+
+					font-family: 'Poppins', sans-serif;
+					font-size: 14px;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 22px; /* 157.143% */
+				}
+
+				.custom-input {
+					background-color: #f9f9f9; // світлий фон
+					border: 1px solid #ccc;    // тонка сіра рамка
+
+					display: flex;
+					width: 360px;
+					padding: 25px 15px;
+					flex-direction: column;
+					justify-content: center;
+					align-items: flex-start;
+					gap: 10px;
+					color: #6E7172;
+					font-family: 'Poppins', sans-serif;
+					font-size: 16px;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 24px; /* 150% */
+
+					&::placeholder {
+						color: #999;
+						font-weight: 400;
+					}
+
+					&:focus {
+						outline: none;
+						border-color: #aaa; // або залишити #ccc, якщо не хочеш змінювати
+						background-color: #fff;
+					}
+				}
+
+
+				.gift_items__button {
+					display: flex;
+					justify-content: start;
+
+					a{
+						text-decoration: none;
+						.shop-now {
+							display: flex;
+							justify-content: center;
+							font-family: 'Poppins', sans-serif;
+							font-size: 14px;
+							background: #000000;
+							color: #ffffff;
+							padding: 20px 91px 22px 79px;
+							cursor: pointer;
+							border: 1px solid transparent;
+							transition: opacity 0.5s ease-in-out;
+
+							&:hover {
+								opacity: 0.7;
+								border: 1px solid #000000;
+
+							}
+						}
+						.shop-now__newslt_mod{
+							width: 360px;
+						}
+
+					}
+
+
+
+				}
+			}
+
+			//.gift_items__info__select__mod{
+			//	padding: 94px 80px 93px 80px;
+			//}
+			.gift_items__info__mod-input{
+				padding: 115px 80px 116px 80px;
+			}
+		}
+	}
+}

@@ -1,3 +1,9 @@
+
+
+
+
+
+////////////////////////////scroll////////////////////
 window.addEventListener("scroll", function () {
 	if (!document.body.classList.contains("white_header")) {
 		const moveThreshold = 48;
@@ -26,3 +32,5 @@ window.addEventListener("scroll", function () {
 		}
 	}
 });
+
+
