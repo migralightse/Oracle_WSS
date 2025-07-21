@@ -1,8 +1,4 @@
 
-
-
-
-
 ////////////////////////////scroll////////////////////
 window.addEventListener("scroll", function () {
 	if (!document.body.classList.contains("white_header")) {
@@ -33,4 +29,46 @@ window.addEventListener("scroll", function () {
 	}
 });
 
+
+
+/////////////////////////badge_items_card/////////////////////////////////
+document.querySelectorAll('[data-badge="new"]').forEach(card => {
+	const badge = document.createElement('span');
+	badge.className = 'product-badge';
+	badge.textContent = 'New';
+	card.querySelector('.card_image').appendChild(badge);
+});
+
+///////////////////////////////swiper///////////////////////////
+// const blogSlider = new Swiper('.blog__posts', {
+// 	slidesPerView: 2,
+// 	spaceBetween: 0,
+// 	loop: false,
+// 	navigation: {
+// 		nextEl: '.swiper-button-next',
+// 		prevEl: '.swiper-button-prev',
+// 	},
+// 	pagination: {
+// 		el: '.swiper-pagination',
+// 		clickable: true,
+// 	},
+//
+// 	breakpoints: {
+// 		0: {
+// 			slidesPerView: 1,
+// 		},
+// 		768: {
+// 			slidesPerView: 2,
+// 		},
+// 		1024: {
+// 			slidesPerView: 2,
+// 		},
+// 		1280: {
+// 			slidesPerView:  false,
+// 		},
+// 		1560: {
+// 			enabled: false, //
+// 		},
+// 	},
+// });
 

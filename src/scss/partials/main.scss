@@ -8,8 +8,8 @@
 		}
 		.main_banner {
 			background-image: url('../../img/main_banner.jpg');
-			background-size: cover; /* щоб картинка розтягувалась пропорційно */
-			background-position: top; // ⬅️ ЗОБРАЖЕННЯ ПОЧИНАЄТЬСЯ З ВЕРХУ
+			background-size: cover;
+			background-position: top;
 			background-repeat: no-repeat;
 			position: relative;
 			height: 900px;
@@ -117,4 +117,35 @@
 		}
 	}
 
+}
+
+
+@media (max-width: 1023px) {
+	.main .container .main_banner .banner_title{
+		color: var(--White, #FFF);
+		text-align: center;
+
+		/* H1 - Mobile */
+		font-family: 'Poppins', sans-serif;
+		font-size: 50px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 40px; /* 125% */
+		letter-spacing: 0.64px;
+	}
+}
+
+@media (max-width: 768px) {
+	.main .container .main_banner .banner_title{
+		font-size: 32px;
+	}
+
+}
+
+@media (max-width: 575px) {
+	.main .container .main_banner .banner_title{
+		font-size: 32px;
+		white-space: normal; // ✅ дозволяє переносити
+		text-align: center;
+	}
 }
