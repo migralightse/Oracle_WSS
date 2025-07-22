@@ -1,5 +1,4 @@
 
-
 	.items_card{
 		background-color: #FFFFFF;
 		display: flex;
@@ -31,18 +30,39 @@
 				width: 354px;
 				height: 441px;
 				overflow: hidden;
+				position: relative;
 				a, img {
 					display: block;
 					width: 100%;
 					height: 100%;
 					object-fit: cover; // Обрізає зображення, зберігаючи пропорції
-					transition: opacity 0.5s ease;
+					transition: opacity 0.5s ease-in-out;
 
 					&:hover {
 						opacity: 0.8;
 					}
 				}
 			}
+
+			.view-more {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				padding: 20px 0;
+				background: rgba(255, 255, 255, 0.8);
+				color: #3A3836;
+				font-family: 'Poppins', sans-serif;
+				font-size: 16px;
+				text-align: center;
+				opacity: 0;
+				transition: opacity 0.5s ease-in-out;
+				pointer-events: none; // щоб не заважав hover'у
+			}
+
+			&:hover .view-more {
+				opacity: 1;
+			}
+
 			.card_title{
 				color: #3A3836;
 				text-align: center;

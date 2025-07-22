@@ -23,6 +23,10 @@
 			justify-content: center;
 			gap: 30px;
 
+			//.swiper-wrapper {
+			//	display: contents; // дозволяє flex працювати як раніше
+			//}
+
 			.blog__posts-item {
 				display: grid;
 				gap: 20px;
@@ -113,3 +117,19 @@
 	}
 }
 
+@media (max-width: 1559px) {
+	.blog__posts {
+		display: block;
+
+		.swiper-wrapper {
+			display: flex;
+			gap: 0;
+		}
+
+		.swiper-slide {
+			width: auto; // або наприклад 80%
+			flex-shrink: 0;
+			margin-right: 16px; // або те, що в тебе в JS як spaceBetween
+		}
+	}
+}

@@ -64,27 +64,29 @@
 					display: flex;
 					justify-content: start;
 
-					a{
+					.shop-now {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						font-family: 'Poppins', sans-serif;
+						font-size: 14px;
+						background: #000000;
+						color: #ffffff;
+						padding: 20px 79px 20px 79px;
+						cursor: pointer;
+						border: 2px solid transparent;
+						transition: all 0.5s ease-in-out;
 						text-decoration: none;
-						.shop-now {
-							display: flex;
-							justify-content: center;
-							font-family: 'Poppins', sans-serif;
-							font-size: 14px;
-							background: #000000;
-							color: #ffffff;
-							padding: 20px 79px 20px 79px;
-							cursor: pointer;
-							border: 1px solid transparent;
-							transition: opacity 0.5s ease-in-out;
 
-							&:hover {
-								opacity: 0.7;
-								border: 1px solid #000000;
 
-							}
+						&:hover {
+							//background: transparent;
+							color: #000000;
+							border: 2px solid #000000;
+							background: rgba(255, 255, 255, 0.2); // прозорий білий фон
+							backdrop-filter: blur(10px); // саме розмиття
+							-webkit-backdrop-filter: blur(10px); // для Safari
 						}
-
 					}
 
 
@@ -110,7 +112,7 @@
 			.gift_items__info{
 				display: grid;
 				gap: 20px;
-				padding: 129px 80px 130px 80px;
+				padding: 129px 80px 128px 80px;
 				background: #F9F9F9;
 				.gift_items__title{
 					color: var(--Black-Primary, #000);
@@ -168,31 +170,35 @@
 					display: flex;
 					justify-content: start;
 
-					a{
+					.shop-now {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						font-family: 'Poppins', sans-serif;
+						font-size: 14px;
+						background: #000000;
+						color: #ffffff;
+						padding: 20px 91px 22px 79px;
+						cursor: pointer;
+						border: 2px solid transparent;
+						transition: all 0.5s ease-in-out;
 						text-decoration: none;
-						.shop-now {
-							display: flex;
-							justify-content: center;
-							font-family: 'Poppins', sans-serif;
-							font-size: 14px;
-							background: #000000;
-							color: #ffffff;
-							padding: 20px 85px 20px 85px;
-							cursor: pointer;
-							border: 1px solid transparent;
-							transition: opacity 0.5s ease-in-out;
 
-							&:hover {
-								opacity: 0.7;
-								border: 1px solid #000000;
 
-							}
+						&:hover {
+							//background: transparent;
+							color: #000000;
+							border: 2px solid #000000;
+							background: rgba(255, 255, 255, 0.2); // прозорий білий фон
+							backdrop-filter: blur(10px); // саме розмиття
+							-webkit-backdrop-filter: blur(10px); // для Safari
 						}
+					}
 						.shop-now__newslt_mod{
 							width: 360px;
 						}
 
-					}
+
 
 
 

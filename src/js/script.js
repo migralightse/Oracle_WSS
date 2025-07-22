@@ -40,35 +40,34 @@ document.querySelectorAll('[data-badge="new"]').forEach(card => {
 });
 
 ///////////////////////////////swiper///////////////////////////
-// const blogSlider = new Swiper('.blog__posts', {
-// 	slidesPerView: 2,
-// 	spaceBetween: 0,
-// 	loop: false,
-// 	navigation: {
-// 		nextEl: '.swiper-button-next',
-// 		prevEl: '.swiper-button-prev',
-// 	},
-// 	pagination: {
-// 		el: '.swiper-pagination',
-// 		clickable: true,
-// 	},
+// let blogSlider = null;
 //
-// 	breakpoints: {
-// 		0: {
-// 			slidesPerView: 1,
-// 		},
-// 		768: {
-// 			slidesPerView: 2,
-// 		},
-// 		1024: {
-// 			slidesPerView: 2,
-// 		},
-// 		1280: {
-// 			slidesPerView:  false,
-// 		},
-// 		1560: {
-// 			enabled: false, //
-// 		},
-// 	},
-// });
+// function initBlogSlider() {
+// 	const screenWidth = window.innerWidth;
+//
+// 	if (screenWidth < 1560 && blogSlider === null) {
+// 		blogSlider = new Swiper('.blog__posts.swiper', {
+// 			slidesPerView: 1.2,
+// 			spaceBetween: 16,
+// 			breakpoints: {
+// 				768: {
+// 					slidesPerView: 2,
+// 				},
+// 				1024: {
+// 					slidesPerView: 2.5,
+// 				},
+// 			},
+// 		});
+// 	} else if (screenWidth >= 1560 && blogSlider !== null) {
+// 		blogSlider.destroy(true, true);
+// 		blogSlider = null;
+// 	}
+// }
+//
+// // запуск при завантаженні
+// initBlogSlider();
+//
+// // запуск при ресайзі
+// window.addEventListener('resize', initBlogSlider);
+
 

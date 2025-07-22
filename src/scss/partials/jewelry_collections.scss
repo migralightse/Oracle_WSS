@@ -27,11 +27,43 @@
 				.jewelry_collection__gallery-image-wrapper {
 					width: 738px;
 					height: 919px;
+					position: relative;
 					img{
 						display: block;
 						height: 100%;
 						width: 100%;
 						object-fit: cover
+					}
+					.view-more {
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 100%;
+						padding: 20px 0;
+						background: rgba(255, 255, 255, 0.01); // майже прозорий білий
+						color: #000000;
+						font-family: 'Poppins', sans-serif;
+						font-size: 48px;
+						text-align: center;
+						opacity: 0;
+						transition: opacity 0.5s ease-in-out;
+						pointer-events: none;
+						font-weight: 600;
+
+
+						// чорна лінія зверху
+						&::before {
+							content: "";
+							display: block;
+							height: 3px;
+							width: 50px; // ⬅ лінія буде 60px шириною
+							background-color: black;
+							margin: 0 auto 10px auto; // ⬅ центрування та відступ знизу
+						}
+
+					}
+					&:hover .view-more{
+						opacity: 1;
 					}
 				}
 			}
@@ -43,12 +75,46 @@
 				.jewelry_collection__gallery-item{
 					width: 354px;
 					height: 441px;
+					position: relative;
 					img{
 						display: block;
 						height: 100%;
 						width: 100%;
 						object-fit: cover
 					}
+					.view-more {
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 100%;
+						padding: 20px 0;
+						background: rgba(255, 255, 255, 0.01); // майже прозорий білий
+						color: #000000;
+						font-family: 'Poppins', sans-serif;
+						font-size: 48px;
+						text-align: center;
+						opacity: 0;
+						transition: opacity 0.5s ease-in-out;
+						pointer-events: none;
+						font-weight: 600;
+
+
+						// чорна лінія зверху
+						&::before {
+							content: "";
+							display: block;
+							height: 3px;
+							width: 50px; // ⬅ лінія буде 60px шириною
+							background-color: black;
+							margin: 0 auto 10px auto; // ⬅ центрування та відступ знизу
+						}
+
+					}
+					&:hover .view-more{
+						opacity: 1;
+					}
+
+
 				}
 
 			}
@@ -78,6 +144,7 @@
 	.jewelry_collection .container .jewelry_collection__gallery .jewelry_collection__gallery-right .jewelry_collection__gallery-item{
 		width: 100%;
 	}
-}.jewelry_collection .container .jewelry_collection__gallery .jewelry_collection__gallery-right{
-	gap: 15px;
- }
+	.jewelry_collection .container .jewelry_collection__gallery .jewelry_collection__gallery-right{
+		gap: 15px;
+	}
+}
