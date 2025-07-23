@@ -48,6 +48,8 @@
 		background: rgba(255, 255, 255, 0.16);
 	}
 
+
+
 	.header_left {
 		display: flex;
 		justify-content: space-around;
@@ -167,6 +169,39 @@
 				}
 			}
 		}
+
+	}
+	.submenu {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background: white;
+		padding: 40px;
+		z-index: 999;
+		height: 297px;
+
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+		pointer-events: none;
+	}
+
+	.submenu.visible {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+
+	.submenu-content {
+		display: none;
+		grid-template-columns: repeat(4, minmax(150px, 1fr));
+		gap: 30px;
+	}
+
+	.submenu-content.active {
+		display: flex;
+		justify-content: space-evenly;
 
 	}
 }

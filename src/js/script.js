@@ -71,3 +71,52 @@ document.querySelectorAll('[data-badge="new"]').forEach(card => {
 // window.addEventListener('resize', initBlogSlider);
 
 
+//////////////////////////header_menu//////////////////////////
+const navItems = document.querySelectorAll('.nav-item');
+const submenu = document.getElementById('submenu');
+const submenuContents = submenu.querySelectorAll('.submenu-content');
+const headerBottom = document.querySelector('.header__bottom');
+const logo = document.querySelector('.header_logo');
+const navLinks = document.querySelectorAll('.nav_link');
+
+// Наведення на головні пункти меню
+navItems.forEach(item => {
+	item.addEventListener('mouseenter', () => {
+		const target = item.dataset.menu;
+
+		submenu.classList.add('visible');
+		headerBottom.classList.add('scrolled');
+		logo.classList.add('scrolled');
+		navItems.forEach(nav => nav.classList.add('scrolled'));
+		navLinks.forEach(link => link.classList.add('scrolled')); // ✅ додаємо клас nav_link
+
+		submenuContents.forEach(content => {
+			if (content.dataset.content === target) {
+				content.classList.add('active');
+			} else {
+				content.classList.remove('active');
+			}
+		});
+	});
+});
+
+// Наведення на праві елементи меню (Search, Account, Cart)
+navLinks.forEach(link => {
+	link.addEventListener('mouseenter', () => {
+		headerBottom.classList.add('scrolled');
+		logo.classList.add('scrolled');
+		link.classList.add('scrolled'); // ✅ додаємо клас саме до link
+	});
+});
+
+// При виході мишки з усього хедера — ховаємо меню і прибираємо класи
+document.querySelector('.header').addEventListener('mouseleave', () => {
+	submenu.classList.remove('visible');
+	headerBottom.classList.remove('scrolled');
+	logo.classList.remove('scrolled');
+
+	navItems.forEach(nav => nav.classList.remove('scrolled'));
+	navLinks.forEach(link => link.classList.remove('scrolled')); // ✅ знімаємо клас
+});
+
+
