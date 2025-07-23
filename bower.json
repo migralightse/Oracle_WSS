@@ -15,5 +15,9 @@
     "test",
     "tests"
   ],
-  "dependencies": {}
+	"dependencies": {
+		"jquery": "^3.7.1",
+		"select2": "~4.0"
+	}
+
 }

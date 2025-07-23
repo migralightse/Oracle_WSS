@@ -111,4 +111,10 @@ document.querySelector('.header').addEventListener('mouseleave', () => {
   navItems.forEach(nav => nav.classList.remove('scrolled'));
   navLinks.forEach(link => link.classList.remove('scrolled')); // ✅ знімаємо клас
 });
+$(document).ready(function () {
+  $('.js-select2').select2({
+    minimumResultsForSearch: '-1',
+    width: '100%'
+  });
+});
 //# sourceMappingURL=script.js.map
