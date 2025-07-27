@@ -18,6 +18,7 @@
 			letter-spacing: 0.96px;
 		}
 
+
 		.blog__posts {
 			display: flex;
 			justify-content: center;
@@ -49,7 +50,7 @@
 
 					.blog__posts-item__title {
 
-						a{
+						a {
 							color: var(--Black-Primary, #000);
 
 							/* H3-Desktop */
@@ -117,19 +118,126 @@
 	}
 }
 
-@media (max-width: 1559px) {
-	.blog__posts {
-		display: block;
+@media (max-width: 575px) {
+	.blog .container .blog__title {
+		color: var(--Black-Primary, #000);
+		text-align: center;
 
+		/* H2 – Mobile */
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 32px; /* 133.333% */
+		letter-spacing: 0.48px;
+		padding-bottom: 15px;
+	}
+}
+
+
+/////////Коли Swiper активний (менше 1580px)
+@media (max-width: 1579px) {
+	.blog__posts {
+		display: block; // Swiper керує елементами
 		.swiper-wrapper {
 			display: flex;
-			gap: 0;
+			gap: 0; // керує JS
+
 		}
 
 		.swiper-slide {
-			width: auto; // або наприклад 80%
+			width: auto; // дозволяє автоширину
 			flex-shrink: 0;
-			margin-right: 16px; // або те, що в тебе в JS як spaceBetween
+
 		}
 	}
 }
+
+// ✅ Для мобільних
+@media (max-width: 575px) {
+		.blog .container{
+			padding-bottom: 30px;
+		}
+
+	.blog .container .blog__title {
+		text-align: center;
+		font-size: 24px;
+		line-height: 32px;
+		padding-bottom: 15px;
+	}
+
+	.blog .container .blog__posts .blog__posts-item .blog__posts__image-wrapper{
+		width: 290px;
+		height: 167px;
+	}
+
+	.blog .container .blog__posts .blog__posts-item .blog__posts-item__info .blog__posts-item__title a{
+		color: var(--Black-Primary, #000);
+
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 26px; /* 144.444% */
+	}
+	.blog .container .blog__posts .blog__posts-item .blog__posts-item__info .blog__posts-item__date{
+		color: var(--Grey, #999);
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 18px; /* 150% */
+	}
+	.blog .container .blog__posts .blog__posts-item .blog__posts-item__info .blog__posts-item__description {
+		color: var(--Dark-Grey-Secondary, #6E7172);
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 22px; /* 157.143% */
+		max-width: 290px;
+
+	}
+	.blog .container .blog__posts .blog__posts-item .blog__posts-item__info .blog__posts-item__read-more a {
+		color: var(--Black-Primary, #000);
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 22px; /* 157.143% */
+		letter-spacing: 0.84px;
+		text-transform: uppercase;
+	}
+
+	.blog .container .blog__posts .blog__posts-item{
+		gap: 10px;
+	}
+
+}
+
+
+
+
+
+////////swiper///////////////
+@media (min-width: 1580px) {
+	.blog__posts .swiper-wrapper{
+		width: auto !important;
+		display: flex;
+
+		gap: 30px;
+
+
+
+	}
+	.swiper-slide{
+		width: auto !important;
+	}
+
+}
+
+@media (min-width: 1480px) {
+	.blog__posts .swiper-wrapper {
+		transform: none !important;
+		width: auto !important;
+	}
+	.blog__posts .swiper-slide {
+		width: auto !important;
+	}
+}
+

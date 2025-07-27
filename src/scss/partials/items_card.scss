@@ -115,3 +115,45 @@
 
 
 	}
+
+
+	@media (max-width: 575px) {
+		.items_card .card{
+			gap: 2px;
+		}
+
+		.items_card .card .card_image{
+			height: 200px;
+		}
+
+		.items_card .card .product-badge{
+			font-size: 10px;
+			padding: 1px 10px;
+			top: 9px;
+			left: 10px;
+		}
+
+		.items_card .card .view-more{
+			padding: 5px 0;
+			font-size: 12px;
+		}
+
+		.items_card .card .card_title{
+			color: #3A3836;
+			text-align: center;
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 300;
+			line-height: 20px; /* 166.667% */
+			letter-spacing: 0.24px;
+		}
+		.items_card .card .tax{
+			color: #3A3836;
+			text-align: center;
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 20px; /* 166.667% */
+			letter-spacing: 0.24px;
+		}
+	}

@@ -1,13 +1,15 @@
-
 ////////////////////////////scroll////////////////////
 window.addEventListener("scroll", function () {
 	if (!document.body.classList.contains("white_header")) {
 		const moveThreshold = 48;
-		const styleThreshold =450;
+		const styleThreshold = 450;
 
 		const navLinks = document.querySelectorAll(".header_nav .nav__list li > a");
+		const mob_navLinks = document.querySelectorAll(".header_nav .mobile_nav_list > a");
 		const headerBottom = document.querySelector(".header__bottom");
 		const headerLogo = document.querySelector(".header_logo");
+		const burger_logo = document.querySelectorAll(".burger-menu .bar");
+
 
 		// Зміщення header__bottom при 48px
 		if (window.scrollY > moveThreshold) {
@@ -16,18 +18,23 @@ window.addEventListener("scroll", function () {
 			headerBottom?.classList.remove("scrolled_top");
 		}
 
-		// Стилізація інших елементів при 300px
+		// Стилізація інших елементів при 450px
 		if (window.scrollY > styleThreshold) {
 			navLinks.forEach(el => el.classList.add("scrolled"));
+			mob_navLinks.forEach(el => el.classList.add("scrolled"));
+			burger_logo.forEach(el => el.classList.add("scrolled"));
 			headerLogo?.classList.add("scrolled");
 			headerBottom?.classList.add("scrolled");
 		} else {
 			navLinks.forEach(el => el.classList.remove("scrolled"));
+			mob_navLinks.forEach(el => el.classList.remove("scrolled")); // ← Виправлено
+			burger_logo.forEach(el => el.classList.remove("scrolled")); // ← Виправлено
 			headerLogo?.classList.remove("scrolled");
 			headerBottom?.classList.remove("scrolled");
 		}
 	}
 });
+
 
 
 
@@ -40,35 +47,48 @@ document.querySelectorAll('[data-badge="new"]').forEach(card => {
 });
 
 ///////////////////////////////swiper///////////////////////////
-// let blogSlider = null;
-//
-// function initBlogSlider() {
-// 	const screenWidth = window.innerWidth;
-//
-// 	if (screenWidth < 1560 && blogSlider === null) {
-// 		blogSlider = new Swiper('.blog__posts.swiper', {
-// 			slidesPerView: 1.2,
-// 			spaceBetween: 16,
-// 			breakpoints: {
-// 				768: {
-// 					slidesPerView: 2,
-// 				},
-// 				1024: {
-// 					slidesPerView: 2.5,
-// 				},
-// 			},
-// 		});
-// 	} else if (screenWidth >= 1560 && blogSlider !== null) {
-// 		blogSlider.destroy(true, true);
-// 		blogSlider = null;
-// 	}
-// }
-//
-// // запуск при завантаженні
-// initBlogSlider();
-//
-// // запуск при ресайзі
-// window.addEventListener('resize', initBlogSlider);
+let swiperInstance = null;
+
+function initBlogSwiper() {
+	const screenWidth = window.innerWidth;
+
+	if (screenWidth < 1580 && !swiperInstance) {
+		// Ініціалізація Swiper
+		swiperInstance = new Swiper('.blog__posts.swiper', {
+			slidesPerView: 'auto',
+			spaceBetween: 10,
+			slidesOffsetBefore: 15,
+			slidesOffsetAfter: 15
+		});
+	} else if (screenWidth >= 1580 && swiperInstance) {
+		// Видаляємо Swiper
+		swiperInstance.destroy(true, true);
+		swiperInstance = null;
+
+		// ✅ Відновлюємо початкові стилі
+		const wrapper = document.querySelector('.blog__posts .swiper-wrapper');
+		const slides = document.querySelectorAll('.blog__posts .swiper-slide');
+
+		if (wrapper) {
+			wrapper.removeAttribute('style');
+			wrapper.classList.remove('swiper-wrapper'); // не обов'язково, але можна
+		}
+
+		slides.forEach(slide => {
+			slide.removeAttribute('style');
+			slide.classList.remove('swiper-slide'); // не обов'язково, але можна
+		});
+	}
+}
+
+window.addEventListener('load', initBlogSwiper);
+window.addEventListener('resize', initBlogSwiper);
+
+
+
+
+
+
 
 
 //////////////////////////header_menu//////////////////////////
@@ -87,6 +107,8 @@ navItems.forEach(item => {
 		submenu.classList.add('visible');
 		headerBottom.classList.add('scrolled');
 		logo.classList.add('scrolled');
+		document.body.style.overflow = 'hidden';
+
 		navItems.forEach(nav => nav.classList.add('scrolled'));
 		navLinks.forEach(link => link.classList.add('scrolled')); // ✅ додаємо клас nav_link
 
@@ -103,23 +125,50 @@ navItems.forEach(item => {
 // Наведення на праві елементи меню (Search, Account, Cart)
 navLinks.forEach(link => {
 	link.addEventListener('mouseenter', () => {
+		const target = link.dataset.menu; // Витягуємо data-menu значення
+
+		submenu.classList.add('visible');
 		headerBottom.classList.add('scrolled');
 		logo.classList.add('scrolled');
-		link.classList.add('scrolled'); // ✅ додаємо клас саме до link
+		document.body.style.overflow = 'hidden';
+
+		navItems.forEach(nav => nav.classList.add('scrolled'));
+		navLinks.forEach(link => link.classList.add('scrolled'));
+
+		// Активуємо відповідний контент
+		submenuContents.forEach(content => {
+			if (content.dataset.content === target) {
+				content.classList.add('active');
+			} else {
+				content.classList.remove('active');
+			}
+		});
 	});
 });
+
+
+
 
 // При виході мишки з усього хедера — ховаємо меню і прибираємо класи
 document.querySelector('.header').addEventListener('mouseleave', () => {
 	submenu.classList.remove('visible');
-	headerBottom.classList.remove('scrolled');
-	logo.classList.remove('scrolled');
+	document.body.style.overflow = '';
 
-	navItems.forEach(nav => nav.classList.remove('scrolled'));
-	navLinks.forEach(link => link.classList.remove('scrolled')); // ✅ знімаємо клас
+	// Перевірка чи сторінка нижче styleThreshold
+	const styleThreshold = 450;
+
+	if (window.scrollY <= styleThreshold) {
+		headerBottom.classList.remove('scrolled');
+		logo.classList.remove('scrolled');
+		navItems.forEach(nav => nav.classList.remove('scrolled'));
+		navLinks.forEach(link => link.classList.remove('scrolled'));
+	}
 });
 
 
+
+
+///////підключення бібліотеки селект2////////////////
 $(document).ready(function () {
 	$('.js-select2').select2({
 		minimumResultsForSearch: '-1',
@@ -127,4 +176,18 @@ $(document).ready(function () {
 	});
 });
 //# sourceMappingURL=app.js.map
+
+
+
+//////////////////////select2 block div width/////////////////
+window.addEventListener('load', () => {
+	const wrapper = document.querySelector('.gift_items__select');
+	const button = wrapper.querySelector('.shop-now');
+
+	if (wrapper && button) {
+		const buttonWidth = button.offsetWidth;
+		wrapper.style.width = `${buttonWidth}px`;
+	}
+});
+
 

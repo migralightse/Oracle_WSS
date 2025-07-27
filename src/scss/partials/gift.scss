@@ -1,29 +1,34 @@
-.gift{
+.gift {
 	background-color: #FFFFFF;
-	.container{
+
+	.container {
 		padding: 120px 0 120px 0;
 		display: flex;
 		justify-content: center;
-		.gift_items__left{
+
+		.gift_items__left {
 			display: grid;
-			.gift_items__image__mod{
+
+			.gift_items__image__mod {
 				width: 753px;
 				height: 493px;
 				background-image: url('../../img/gift1_fon.jpg');
 				background-size: cover;
 				background-position: center;
 
-				img{
+				img {
 					height: 100%;
 					width: 100%;
 				}
-				.image__mod{
+
+				.image__mod {
 					display: block;
 					height: 100%;
 					width: 100%;
 					object-fit: contain;
 				}
 			}
+
 			.gift_items__image {
 				width: 753px;
 				height: 493px;
@@ -35,12 +40,14 @@
 					object-fit: cover;
 				}
 			}
-			.gift_items__info{
+
+			.gift_items__info {
 				display: grid;
 				gap: 20px;
 				padding: 129px 80px 130px 80px;
 				background: #F9F9F9;
-				.gift_items__title{
+
+				.gift_items__title {
 					color: var(--Black-Primary, #000);
 
 					font-family: 'Poppins', sans-serif;
@@ -50,7 +57,8 @@
 					line-height: 64px; /* 133.333% */
 					letter-spacing: 0.96px;
 				}
-				.gift_items__description{
+
+				.gift_items__description {
 					color: #6E7172;
 
 
@@ -60,6 +68,7 @@
 					font-weight: 400;
 					line-height: 22px; /* 157.143% */
 				}
+
 				.gift_items__button {
 					display: flex;
 					justify-content: start;
@@ -90,16 +99,16 @@
 					}
 
 
-
 				}
 			}
 		}
-		.gift_items__right{
+
+		.gift_items__right {
 			display: grid;
+
 			.gift_items__image {
 				width: 753px;
 				height: 493px;
-
 
 
 				img {
@@ -109,12 +118,14 @@
 					object-fit: cover;
 				}
 			}
-			.gift_items__info{
+
+			.gift_items__info {
 				display: grid;
 				gap: 20px;
-				padding: 129px 80px 128px 80px;
+				padding: 93px 80px 90px 80px;
 				background: #F9F9F9;
-				.gift_items__title{
+
+				.gift_items__title {
 					color: var(--Black-Primary, #000);
 
 					font-family: 'Poppins', sans-serif;
@@ -124,7 +135,8 @@
 					line-height: 64px; /* 133.333% */
 					letter-spacing: 0.96px;
 				}
-				.gift_items__description{
+
+				.gift_items__description {
 					color: #6E7172;
 
 
@@ -135,13 +147,14 @@
 					line-height: 22px; /* 157.143% */
 				}
 
-				.gift_items__select{
-					width: 100%;
+				.gift_items__select {
+					display: grid;
+					gap: 20px;
 				}
 
 				.custom-input {
 					background-color: #f9f9f9; // світлий фон
-					border: 1px solid #ccc;    // тонка сіра рамка
+					border: 1px solid #ccc; // тонка сіра рамка
 
 					display: flex;
 					width: 360px;
@@ -198,22 +211,16 @@
 							-webkit-backdrop-filter: blur(10px); // для Safari
 						}
 					}
-						.shop-now__newslt_mod{
-							width: 360px;
-						}
 
-
-
+					.shop-now__newslt_mod {
+						width: 360px;
+					}
 
 
 				}
 			}
-
-			//.gift_items__info__select__mod{
-			//	padding: 94px 80px 93px 80px;
-			//}
-			.gift_items__info__mod-input{
-				padding: 115px 80px 116px 80px;
+			.gift_items__info__mod-input {
+				padding: 115px 80px 114px 80px;
 			}
 		}
 	}

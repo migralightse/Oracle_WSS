@@ -33,7 +33,8 @@
 			background-color: #fff;
 
 		}
-		&.scrolled_top{
+
+		&.scrolled_top {
 			top: 0;
 		}
 	}
@@ -49,20 +50,37 @@
 	}
 
 
-
 	.header_left {
 		display: flex;
 		justify-content: space-around;
 		gap: 106px;
 
-		.burger-menu{
+		.burger-menu {
 			display: none;
-			width: 22px;
-			height: auto;
+			width: 16.667px;
+			height: 12.5px;
+			flex-shrink: 0;
 			cursor: pointer;
 			position: absolute;
-			top: 34px;
+			left: 15px;
+			top: 20px;
+
+			.bar {
+				height: 1.5px;
+				width: 100%;
+				background-color: #fff;
+				display: block;
+				border-radius: 5px;
+				transition: .3s ease;
+				pointer-events: none;
+				margin-bottom: 4px;
+			}
+
+			.bar_mod {
+				width: 60%;
+			}
 		}
+
 
 		.header_logo {
 			.logo__img {
@@ -124,6 +142,7 @@
 		stroke: white;
 		transition: fill 0.5s ease-in-out, stroke 0.5s ease-in-out;
 	}
+
 	.header_nav .nav__list li > a.scrolled svg path,
 	.header_nav .nav__list li > a.scrolled svg circle {
 		stroke: black;
@@ -135,6 +154,15 @@
 			display: flex;
 			align-items: center;
 			height: 100%;
+
+			.mobile_nav_list {
+				display: none;
+
+				.mobile_nav_link {
+
+				}
+
+			}
 
 			.nav__list {
 				display: flex;
@@ -171,13 +199,14 @@
 		}
 
 	}
+
 	.submenu {
 		position: absolute;
 		top: 100%;
 		left: 0;
 		width: 100%;
 		background: white;
-		padding: 40px;
+		padding: 40px 40px 0 40px;
 		z-index: 999;
 		height: 297px;
 
@@ -201,45 +230,137 @@
 
 	.submenu-content.active {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-around;
+
 
 	}
+
+	.submenu-content__block_title {
+		position: relative;
+		color: var(--Black-Primary, #000);
+		font-family: 'Poppins', sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 24px; /* 150% */
+		letter-spacing: 0.32px;
+		padding: 8px 0;
+		margin: 8px 0;
+	}
+
+	.submenu-content__block_title::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 1px;
+		width: 224px;
+		background: rgba(183, 183, 183, 0.16);
+		stroke-width: 1px;
+	}
+
+	.block__link {
+		color: var(--Black-Primary, #000);
+
+		/* Paragraph-3 */
+		font-family: 'Poppins', sans-serif;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 22px; /* 157.143% */
+		padding: 8px 0;
+	}
+
+}
+
+.mobile_nav_link.scrolled svg path,
+.mobile_nav_link.scrolled svg circle {
+	stroke: black !important; // змінює колір ліній на чорний
+}
+
+.header .header_left .burger-menu .bar.scrolled {
+	background-color: black !important;
 }
 
 
-
 @media (max-width: 1280px) {
-	.header__bottom{
-		justify-content: space-between;
+	.header__bottom {
+		justify-content: center;
 		padding: 32px 80px;
+
 	}
-	.burger-menu{
+
+	.header .header_left .burger-menu {
+		display: block;
+		width: 30px;
+		height: 22.5px;
+		left: 25px;
+		top: 35px;
+
+		.bar {
+			height: 2.5px;
+			margin-bottom: 7px;
+		}
+	}
+
+	.header .header_left {
 		display: block;
 	}
-	.header .header_left .header_nav .nav__list{
+	.burger-menu {
+		display: block;
+	}
+	.header .header_left .header_nav .nav__list {
 		display: none;
 	}
-	.header .header_right .header_nav .nav__list{
 
-		gap: 20px;
-	}
-	.header .header_right .header_nav .nav__list .nav_link{
+	.header .header_right .header_nav .nav__list .nav_link {
 		display: none;
+	}
+
+	.header .header_right .header_nav .mobile_nav_list {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+
+		:hover {
+
+		}
+	}
+	.header .header_right .header_nav {
+		position: absolute;
+		top: 3px;
+		right: -65px;
 	}
 }
 
 @media (max-width: 575px) {
-	.header__top{
+	.header__top {
 		padding: 5px 0 5px 0;
-		font-size: 14px;
+		font-size: 10px;
 	}
-	.header__bottom{
+
+	.header .header_left .header_logo .logo__img--white {
+		width: 122px;
+	}
+	.header .header_left .header_logo.scrolled .logo__img--black{
+		width: 122px;
+
+	}
+	.header__bottom {
 		padding: 15px 12px 15px 15px;
-		justify-content: end;
+		top: 30px;
 	}
 	.header__bottom::after {
 		display: none;
 	}
+
+	.header .header_left .burger-menu {
+		top: 15px;
+		width: 20px;
+		height: 12.5px;
+
+	}
+
 }
 
 
