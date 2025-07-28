@@ -144,9 +144,28 @@ document.querySelector('.header').addEventListener('mouseleave', () => {
 ///////підключення бібліотеки селект2////////////////
 $(document).ready(function () {
   $('.js-select2').select2({
-    minimumResultsForSearch: '-1',
-    width: '100%'
+    minimumResultsForSearch: -1,
+    width: 'style' // дозволяє нам керувати шириною через JS
   });
+  const wrapper = document.querySelector('.gift_items__select');
+  const button = wrapper ? wrapper.querySelector('.shop-now') : null;
+  if (wrapper && button) {
+    const updateWidth = () => {
+      const buttonWidth = button.offsetWidth;
+      wrapper.style.width = `${buttonWidth}px`;
+      const select2Container = wrapper.querySelector('.select2-container');
+      if (select2Container) {
+        select2Container.style.width = `${buttonWidth}px`;
+      }
+    };
+
+    // Викликати один раз при завантаженні
+    updateWidth();
+
+    // Використовуємо ResizeObserver для автоматичного оновлення
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(button);
+  }
 });
 
 //////////////////////select2 block div width/////////////////
@@ -158,4 +177,23 @@ window.addEventListener('load', () => {
     wrapper.style.width = `${buttonWidth}px`;
   }
 });
+
+/////////////////////////////////////////////////////////
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenu = document.getElementById('closeMenu');
+const overlay = document.getElementById('overlay');
+function openMenu() {
+  mobileMenu.classList.add('active');
+  overlay.classList.add('active');
+  burger.classList.add('open');
+}
+function closeMenuFunc() {
+  mobileMenu.classList.remove('active');
+  overlay.classList.remove('active');
+  burger.classList.remove('open');
+}
+burger.addEventListener('click', openMenu);
+closeMenu.addEventListener('click', closeMenuFunc);
+overlay.addEventListener('click', closeMenuFunc);
 //# sourceMappingURL=script.js.map
