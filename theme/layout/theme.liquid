@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+    {% render 'meta-tags' %}
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Фавікони (файли потрібно покласти в assets/) -->
+    <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon">
+    <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon">
+
+    <!-- Шрифти -->
+    {{ 'Universal-Sans.css' | asset_url | stylesheet_tag }}
+    {{ 'Items-Demo.css' | asset_url | stylesheet_tag }}
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+	<!-- Стилі -->
+    {{ 'libs.css' | asset_url | stylesheet_tag }}
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+
+    <!-- Swiper -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    {{ content_for_header }}
+</head>
+
+
+<body>
+<div class="wrapper">
+	{% section 'header__top' %}
+	<header class="header">
+		<div class="container header__inner">
+	{% section 'header__bottom' %}
+		</div>
+	</header>
+</div>
+
+
+<main class="main">
+    <div class="container">
+        {{ content_for_layout }}
+    </div>
+</main>
+{% section 'footer' %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+{{ 'script.js' | asset_url | script_tag }}
+{{ 'libs.js' | asset_url | script_tag }}
+</body>
+</html>

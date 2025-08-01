@@ -8,11 +8,12 @@
 
 		.gift_items__left {
 			display: grid;
+			background: #f9f9f9;
 
 			.gift_items__image__mod {
 				width: 753px;
 				height: 493px;
-				background-image: url('../../img/gift1_fon.jpg');
+				background-image: url('../img/gift1_fon.jpg');
 				background-size: cover;
 				background-position: center;
 
@@ -67,6 +68,7 @@
 					font-style: normal;
 					font-weight: 400;
 					line-height: 22px; /* 157.143% */
+					max-width: 593px;
 				}
 
 				.gift_items__button {
@@ -145,6 +147,7 @@
 					font-style: normal;
 					font-weight: 400;
 					line-height: 22px; /* 157.143% */
+					max-width: 593px;
 				}
 
 				.gift_items__select {

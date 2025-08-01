@@ -1,0 +1,82 @@
+<div class="our_happy">
+    <div class="happy_title">
+        {{ section.settings.happy_title | newline_to_br }}
+    </div>
+    <div class="scroll swiper">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                {% render 'feedback_card', block: block %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Our Happy Customers",
+  "tag": "section",
+  "class": "our_happy_customers",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "happy_title",
+      "label": "Головний заголовок секції",
+      "default": "OUR HAPPY CUSTOMERS"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Happy Customers",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "feedback",
+          "settings": {
+            "name": "Sarah M.",
+            "text": "\"I'm blown away by the quality and style of the clothes I received from Shop.co...\""
+          }
+        },
+        {
+          "type": "feedback",
+          "settings": {
+            "name": "Alex K.",
+            "text": "\"Finding clothes that align with my personal style used to be a challenge until...\""
+          }
+        },
+        {
+          "type": "feedback",
+          "settings": {
+            "name": "James L.",
+            "text": "\"As someone who's always on the lookout for unique fashion pieces, I'm thrilled...\""
+          }
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feedback",
+      "name": "Відгук",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Імʼя",
+          "default": "Sarah M."
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Текст відгуку",
+          "default": "\"I'm blown away by the quality and style of the clothes I received from Shop.co...I'm blown away by the quality and style of the clothes I received from Shop.co...I'm blown away by the quality and style of the clothes I received from Shop.co...\""
+        }
+      ]
+    }
+  ]
+
+}
+{% endschema %}

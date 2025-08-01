@@ -93,10 +93,19 @@
 
 }
 
+@media (max-width: 768px) {
+	.new_collection_banner .container .new_collection_banner__title{
+		font-size: 32px !important;
+
+	}
+}
+
 
 @media (max-width: 1023px) {
 	.new_collection_banner .container .new_collection_banner__title{
 		font-size: 50px;
 	}
 }
+
+
 

@@ -1,0 +1,42 @@
+{% for block in section.blocks %}
+	{% case block.type %}
+		{% when 'header__top' %}
+			{% section 'header__top' %}
+		{% when 'header__bottom' %}
+			{% section 'header__bottom' %}
+	{% endcase %}
+{% endfor %}
+
+{% schema %}
+{
+	"name": "Header Group",
+	"max_blocks": 2,
+	"blocks": [
+		{
+			"type": "header__top",
+			"name": "Header Top",
+			"limit": 1,
+			"settings": []
+		},
+		{
+			"type": "header__bottom",
+			"name": "Header Bottom",
+			"limit": 1,
+			"settings": []
+		}
+	],
+	"presets": [
+		{
+			"name": "Default",
+			"blocks": [
+				{
+					"type": "header__top"
+				},
+				{
+					"type": "header__bottom"
+				}
+			]
+		}
+	]
+}
+{% endschema %}
